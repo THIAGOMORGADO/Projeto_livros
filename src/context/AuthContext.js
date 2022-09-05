@@ -49,7 +49,6 @@ export function AuthProvider({children}) {
   function logout (){
     console.log('logout')
     setUser(null);
-
     navigate('/')
     localStorage.removeItem("user")
 
