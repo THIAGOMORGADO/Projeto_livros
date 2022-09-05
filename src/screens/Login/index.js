@@ -1,11 +1,9 @@
 import React, {useState, useContext} from 'react';
-import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 import './styles.css';
 
-
-const SignIn = () => {
+export function LoginPage(){
   const {authenticated, login} = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,8 +13,12 @@ const SignIn = () => {
 
     console.log('Submit', {email, password})
     login(email, password);
-    
+  }
 
+  function handleCadastro(){
+    return (
+      alert('Botão Cadastre-se!')
+    )
   }
 
   return(
@@ -25,7 +27,7 @@ const SignIn = () => {
       <p>{String(authenticated)}</p>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email: </label>
           <input 
             type="email" 
             name="email" 
@@ -37,7 +39,7 @@ const SignIn = () => {
         </div>
         <div className="field">
           <label 
-            htmlFor="password">Senha</label>
+            htmlFor="password">Senha: </label>
           <input 
             type="password" 
             name='password' 
@@ -48,13 +50,10 @@ const SignIn = () => {
             />
         </div>
         <div className="actions">
-          <a href="#">Cadastra-se</a>
-          <button type="submit">Entra</button>
+          <p onClick={handleCadastro} className="btn_cadastrese">Cadastra-se</p>
+          <button type="submit">Entrar</button>
         </div>
       </form>
     </div>
   );
 }
-
-export default SignIn;
-

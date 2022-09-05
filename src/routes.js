@@ -1,21 +1,13 @@
-import React, {Children, useContext} from 'react';
-import { 
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from 'react-router-dom';
+import React, {useContext} from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate,} from 'react-router-dom'
 
+import { AuthProvider, AuthContext } from './context/AuthContext'
 
-import HomePage from './screens/Home';
-import SigninPage from './screens/SignIn'
-import SignUpPage from './screens/Signup'
-import BooksPages from './screens/books';
+import { HomePage } from './screens/Home'
+import { LoginPage } from './screens/Login'
+import { BooksPage } from './screens/Books';
 
-import { AuthProvider, AuthContext } from './Context/AuthContext';
-
-
-export default function AppRoutes() {
+export function AppRoutes() {
   const Private = ({children}) => {
     const {authenticated} = useContext(AuthContext);
 
@@ -29,22 +21,15 @@ export default function AppRoutes() {
     <Router>
       <AuthProvider>
         <Routes>
-          <Route exact path="/" element={<HomePage /> } />
-          <Route exact path="/login" element={<SigninPage /> } />
-          <Route exact path="/Signup" element={<SignUpPage /> } />
-          
-
-          <Route  exact path="/bookspage" element={
+          <Route exact path="/" element={<HomePage />}/>
+          <Route exact path="/login" element={<LoginPage />}/>    
+          <Route exact path="/books" element={
             <Private>
-               <BooksPages />
-            </Private>
-           
-          } />
-            
+               <BooksPage />
+            </Private>           
+          }/>            
         </Routes>
       </AuthProvider>
     </Router>
   );
 }
-
-

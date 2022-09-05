@@ -1,38 +1,66 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
 
+import { useAuth } from '../../context/AuthContext';
 
 // import { Container } from './styles';
 
-const Home = () => {
+export function HomePage() {
+
+  const { logout, user } = useAuth();
+  const [ error, setError ] = useState('');
+
+  async function handleLogoutSubmit() {
+    try {
+      setError('')
+      await logout();
+    } catch(error) {
+      setError(`Falha no Logout ${error}`);
+    }
+  }
+
   const navigate = useNavigate();
 
-  const handleSignIn = () => {
+  const handleLogin = () => {
     navigate('/login')
   }
-  const handleSignUp = () => {
-    navigate('/SignUp')
+
+  const handleBooksPage = () => {
+    navigate('/books')
   }
-  const handleBooksPages = () => {
-    navigate('/bookspage')
-  }
+
   return(
-   <div className="Container">
-    <header>
-      <div className="header-container">
-        <div className='logo'>
-          <h1>Home de livros</h1>
+
+    <div className="container">
+
+      {/* COMPONENTIZAR O HEADER */}
+
+      <header>
+        <div className="header-container">
+          <div className='logo'>
+            <h1>Home de livros</h1>
+          </div>
+          <div className="login">
+            {user ? 
+            <p onClick={handleLogoutSubmit}>LogOut!</p> :
+            <p onClick={handleLogin}>Login</p>
+            }
+          </div>
         </div>
-        <div className="lougIn">
-          <a onClick={handleSignIn}>Sign-in</a> /
-          <a href="" onClick={handleSignUp}>Sign-Up</a>
-        </div>
-      </div>
-    </header>
-    <a onClick={handleBooksPages}>Estante</a>
-   </div>
+      </header> 
+
+      {/* COMPONENTIZAR O HEADER */}
+
+      <main>
+        <h2>AQUI é A HOME!</h2>
+        <p onClick={handleBooksPage}>VAI PARA BOOKS PAGE</p>
+        { error? <p>{error}</p> : "" }
+      </main>
+
+    </div>
+
+
+   
   );
 }
-
-export default Home;
