@@ -1,3 +1,4 @@
+import localStorage from 'local-storage';
 import React, {useState, createContext, useContext, useEffect} from 'react';
 
 import {useNavigate} from 'react-router-dom'
@@ -48,7 +49,8 @@ export function AuthProvider({children}) {
   function logout (){
     console.log('logout')
     setUser(null);
-    navigate('/')
+    navigate('/');
+    localStorage.removeItem("user");
   }
 
   return(
