@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react'
 
-export function Header() {
+import './styles.css';
+import { useNavigate } from 'react-router-dom';
+
+import { useAuth } from '../../context/AuthContext';
+
+export function Header({props}) {
+
+  const { logout, user, setError, error} = useAuth();
+
+  async function handleLogoutSubmit() {
+    try {
+      setError('')
+      await logout();
+    } catch(error) {
+      setError(`Falha no Logout ${error}`);
+    }
+  }
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/login')
+  }
   return (
-    <>
-    <header>
+    <div className='content'>
+      <header>
         <div className="header-container">
           <div className='logo'>
-            <h1>Home de livros</h1>
+            <h1>{props}</h1> 
           </div>
           <div className="login">
             {user ? 
@@ -16,6 +38,6 @@ export function Header() {
           </div>
         </div>
       </header> 
-    </>
-  );
+    </div>
+  )
 }

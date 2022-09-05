@@ -1,18 +1,21 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 import './styles.css';
+import { useNavigate } from 'react-router-dom';
 
 export function LoginPage(){
   const {authenticated, login} = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log('Submit', {email, password})
     login(email, password);
+    
   }
 
   function handleCadastro(){
