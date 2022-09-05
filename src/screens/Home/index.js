@@ -14,13 +14,15 @@ const Home = () => {
   const handleSignUp = () => {
     navigate('/SignUp')
   }
-
+  const handleBooksPages = () => {
+    navigate('/bookspage')
+  }
   return(
    <div className="Container">
     <header>
       <div className="header-container">
         <div className='logo'>
-          <h1>Estante de livros</h1>
+          <h1>Home de livros</h1>
         </div>
         <div className="lougIn">
           <a onClick={handleSignIn}>Sign-in</a> /
@@ -28,6 +30,7 @@ const Home = () => {
         </div>
       </div>
     </header>
+    <a onClick={handleBooksPages}>Estante</a>
    </div>
   );
 }

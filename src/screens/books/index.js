@@ -1,10 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+
 
 // import { Container } from './styles';
 
 const books = () => {
-  return <div />;
+  return(
+    <h1>Estate de livros</h1>
+  );
 }
 
 export default books;

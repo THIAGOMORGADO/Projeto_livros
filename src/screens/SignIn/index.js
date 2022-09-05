@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
 
 import './styles.css';
@@ -14,6 +15,7 @@ const SignIn = () => {
 
     console.log('Submit', {email, password})
     login(email, password);
+    
 
   }
 

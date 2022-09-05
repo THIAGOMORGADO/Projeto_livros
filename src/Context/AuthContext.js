@@ -13,9 +13,11 @@ export const AuthProvider = ({children}) => {
     console.log('login auth', email, password);
     if(password === 'secret' ){
       setUser({id:'123', email});
-      navigate('/home')
+      navigate('/bookspage')
     }
-    
+    else {
+      navigate('/')
+    }
   }
   const logout = () => {
     console.log('logout')
