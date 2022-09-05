@@ -15,7 +15,7 @@ export function LoginPage(){
 
     console.log('Submit', {email, password})
     login(email, password);
-    
+                                                                 
   }
 
   function handleCadastro(){
