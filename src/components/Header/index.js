@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
@@ -35,6 +35,7 @@ export function Header({props}) {
             <p onClick={handleLogoutSubmit}>LogOut!</p> :
             <p onClick={handleLogin}>Login</p>
             }
+            {error? <p>{error}</p> : ""}
           </div>
         </div>
       </header> 
