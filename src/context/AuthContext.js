@@ -16,11 +16,9 @@ export function AuthProvider({children}) {
 
   useEffect(() => {
     const recoverdUser = localStorage.getItem("user");
-
-    if(recoverdUser) {
+    if(recoverdUser){
       setUser(JSON.parse(recoverdUser))
     }
-
   }, [])
  
 
