@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
 
-import { Header } from '../../components/Header';
+import { NavBar } from '../../components/Navbar';
 
 // import { Container } from './styles';
 
@@ -16,8 +16,9 @@ export function HomePage() {
   return(
 
     <div className="container">
-      <Header props={"Home"}/>
-
+       <NavBar />
+     
+     
       <main>
         <h2>AQUI é A HOME!</h2>
         <p onClick={handleBooksPage}>VAI PARA BOOKS PAGE</p>
