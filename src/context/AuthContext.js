@@ -1,4 +1,3 @@
-import localStorage from 'local-storage';
 import React, {useState, createContext, useContext, useEffect} from 'react';
 
 import {useNavigate} from 'react-router-dom'
@@ -14,12 +13,14 @@ export function AuthProvider({children}) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [error, setError] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const recoverdUser = localStorage.getItem("user");
     if(recoverdUser){
       setUser(JSON.parse(recoverdUser))
     }
+    setLoading(false);
   }, [])
  
 
@@ -51,11 +52,10 @@ export function AuthProvider({children}) {
     setUser(null);
     navigate('/')
     localStorage.removeItem("user")
-
   }
 
   return(
-    <AuthContext.Provider value={{authenticated: !!user, user, login, logout, error, setError}}>
+    <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout, error, setError}}>
       {children}
     </AuthContext.Provider>
   );
