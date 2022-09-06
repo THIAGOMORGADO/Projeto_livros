@@ -15,7 +15,7 @@ export function HomePage() {
 
   return(
 
-    <div className="container">
+    <div className="home-container">
        <NavBar />
      
      

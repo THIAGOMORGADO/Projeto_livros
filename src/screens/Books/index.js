@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 // import { Container } from './styles';
 
 import api from '../../services/api';
-
-import { Header } from '../../components/Header'
+import { NavBar } from '../../components/Navbar';
+import { Card } from '../../components/Card';
 
 export function BooksPage(){
 
@@ -28,14 +28,13 @@ export function BooksPage(){
 
   return(
     <>
-    <Header props={"Estante de livos"}/>
+    <NavBar />
+    
 
-      {books?.slice(0, 10).map((p, index) => {
-          return <div key={index} product={p}>
-            <p>{p.title}</p>
-            <p>{p.preco_venda}</p>
-          </div>
-      })}
+    {books?.slice(0, 3).map((p, index) => {
+        return <Card key={index} product={p}/>
+      })        
+    } 
 
     </>
    

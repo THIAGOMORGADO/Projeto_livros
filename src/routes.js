@@ -6,6 +6,8 @@ import { AuthProvider, AuthContext } from './context/AuthContext'
 import { HomePage } from './screens/Home'
 import { LoginPage } from './screens/Login'
 import { BooksPage } from './screens/Books';
+import { AboutPage } from './screens/About';
+import { ContactPage } from './screens/Contact';
 
 export function AppRoutes() {
   const Private = ({children}) => {
@@ -27,6 +29,9 @@ export function AppRoutes() {
       <AuthProvider>
         <Routes>
           <Route exact path="/" element={<HomePage />}/>
+          <Route exact path="/about" element={<AboutPage />}/>
+          <Route exact path="/contact" element={<ContactPage />}/>
+        
           <Route exact path="/login" element={<LoginPage />}/>    
           <Route exact path="/books" element={
             <Private>
@@ -34,6 +39,7 @@ export function AppRoutes() {
             </Private>           
           }/>            
         </Routes>
+       
       </AuthProvider>
     </Router>
   );
