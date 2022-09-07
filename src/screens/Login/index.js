@@ -1,19 +1,18 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../../context/AuthContext';
 
 import './styles.css';
 
 export function LoginPage(){
-  const {authenticated, login} = useContext(AuthContext);
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+   
                                                               
     console.log('Submit', {email, password})
   }
@@ -27,7 +26,7 @@ export function LoginPage(){
   return(
     <div id="login">
       <h1 className="title">Login</h1>
-      <p>{String(authenticated)}</p>
+  
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="email">Email: </label>

@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+
+import { useParams } from 'react-router-dom'
 // import { Container } from './styles';
 
 import api from '../../services/api';
@@ -8,33 +10,37 @@ import { Card } from '../../components/Card';
 export function BooksPage(){
 
   const [books, setBooks] = useState([]);
+  const { codigo } = useParams();
 
-  useEffect(() => {
+
+    useEffect(() => {
     let isSubscribed = true
     async function getBooksSql() {
       const response = await api.get('/livros');
       if (isSubscribed) {
         setBooks(response.data);
+        console.log(response.data.codigo)
       }        
     };
     getBooksSql();
     return () => isSubscribed = false
     // eslint-disable-next-line 
+
+    
   }, []);
-
-
   console.log(books);
-
 
   return(
     <>
-    <NavBar />
-    
+      <NavBar />
+      <h1>AboutPage: {codigo}</h1>
 
-    {books?.slice(0, 3).map((p, index) => {
+      {books?.slice(0, 3).map((p, index) => {
         return <Card key={index} product={p}/>
       })        
     } 
+
+
 
     </>
    

@@ -8,6 +8,8 @@ export function Card(props) {
   
   const {title, codigo, author, historico, preco_venda, capa_img,} = props.product
 
+  
+
   return (
     <>
     <main className="card-container" >
@@ -18,7 +20,7 @@ export function Card(props) {
             <img src={capa_img} alt={title}class="profile-img" />
             <p class="name">{title}</p>
             <p class="description">{historico}</p>
-            <button class='btn'>R$ {preco_venda}</button>
+            <button class='btn' onClick={() => console.log(codigo)}>R$ {preco_venda}</button>
           </div>
         </div>
       </div>  

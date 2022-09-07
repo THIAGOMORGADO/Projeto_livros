@@ -1,46 +1,27 @@
-import React, {useContext} from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate,} from 'react-router-dom'
+import React from 'react';
+import {  Route, Routes } from 'react-router-dom'
 
-import { AuthProvider, AuthContext } from './context/AuthContext'
+
 
 import { HomePage } from './screens/Home'
 import { LoginPage } from './screens/Login'
 import { BooksPage } from './screens/Books';
+import { BookPage } from './screens/Book';
 import { AboutPage } from './screens/About';
 import { ContactPage } from './screens/Contact';
 
 export function AppRoutes() {
-  const Private = ({children}) => {
-    const {authenticated, loading} = useContext(AuthContext);
+  return (
+    <div className='App'>
+      <Routes>
+        <Route  path="/" element={<HomePage />} />
+        <Route  path="/about/:id" element={<AboutPage />} />
+        <Route  path="/contact" element={<ContactPage />} />
+        <Route  path="/book" element={<BookPage />} />
+        <Route  path="/login" element={<LoginPage />} />
+        <Route  path="/books/:codigo" element={<BooksPage />} />
+      </Routes>
+    </div>
 
-    if(loading) {
-      return <div className='loading'>Carregando...</div>
-    }
-
-
-    if(!authenticated) {
-      return <Navigate to="/login" />
-    } 
-    return children;
-  }
-
-  return(
-    <Router>
-      <AuthProvider>
-        <Routes>
-          <Route exact path="/" element={<HomePage />}/>
-          <Route exact path="/about" element={<AboutPage />}/>
-          <Route exact path="/contact" element={<ContactPage />}/>
-        
-          <Route exact path="/login" element={<LoginPage />}/>    
-          <Route exact path="/books" element={
-            <Private>
-               <BooksPage />
-            </Private>           
-          }/>            
-        </Routes>
-       
-      </AuthProvider>
-    </Router>
   );
 }
