@@ -8,7 +8,7 @@ export  function AboutPage() {
   return (
     <div>
       <NavBar />
-      <h1>AboutPage: {id}</h1>
+      <h1>Puxando Usuarios pela url: {id}</h1>
     </div>
     
   )
