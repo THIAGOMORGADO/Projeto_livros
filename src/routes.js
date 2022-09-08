@@ -20,6 +20,7 @@ export function AppRoutes() {
         <Route  path="/book" element={<BookPage />} />
         <Route  path="/login" element={<LoginPage />} />
         <Route  path="/books/:codigo" element={<BooksPage />} />
+        <Route  path=":id" element={<BooksPage />} />
       </Routes>
     </div>
 

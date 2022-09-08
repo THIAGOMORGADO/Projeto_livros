@@ -28,7 +28,9 @@ export function BooksPage(){
 
     
   }, []);
-  console.log(books);
+ 
+
+
 
   return(
     <>
@@ -36,7 +38,9 @@ export function BooksPage(){
       <h1>AboutPage: {codigo}</h1>
 
       {books?.slice(0, 3).map((p, index) => {
-        return <Card key={index} product={p}/>
+        return <Card key={index} product={p} 
+          onClick={() => console.log(index.codigo)} />
+        
       })        
     } 
 
