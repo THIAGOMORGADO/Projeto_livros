@@ -1,30 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import api from '../../services/api';
+import React from 'react'
 
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-export function BookPage({id}) {
-  console.log(JSON.stringify(id))
+export function BookPage() {
 
-  const [books, setBooks] = useState([]);
-  const { codigo } = useParams();
+  const params = useLocation();
 
-
-  useEffect(() => {
-
-    const isSubscribed = true
-
-    async function getBooksSql() {
-      const {response} = await api.get('/livros');
-      if (isSubscribed) {
-        setBooks(response);
-        console.log(response)
-      }        
-    };
-    getBooksSql();
-  }, [])
+  console.log(params)
 
   return (
-   <h1>{books}</h1>
+   <h1></h1>
   )
 }

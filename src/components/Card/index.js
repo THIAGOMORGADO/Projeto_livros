@@ -1,14 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import './styles.css';
 
-import logo from '../../assets/Logo.png'
 
 export function Card(props) {
+  const navigate = useNavigate();
   
   const {title, codigo, author, historico, preco_venda, capa_img,} = props.product
 
-  
+  function handlebook() {
+
+    navigate(`/book`, {
+      state: codigo,
+    })
+  }
+
 
   return (
     <>
@@ -18,9 +25,9 @@ export function Card(props) {
           <div class="container">
             <div class='banner-img'></div>
             <img src={capa_img} alt={title}class="profile-img" />
-            <p class="name">{title}</p>
-            <p class="description">{historico}</p>
-            <button class='btn' onClick={() => console.log(codigo)}>R$ {preco_venda}</button>
+            <p className="name">{title}</p>
+            <p className="description">{historico}</p>
+            <button className='btn' onClick={handlebook}>R$ {preco_venda}</button>
           </div>
         </div>
       </div>  

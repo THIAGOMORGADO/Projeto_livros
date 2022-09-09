@@ -7,8 +7,11 @@ import api from '../../services/api';
 import { NavBar } from '../../components/Navbar';
 import { Card } from '../../components/Card';
 
-export function BooksPage(){
+import { useNavigate } from 'react-router-dom';
 
+export function BooksPage(){
+  const navigate = useNavigate();
+   
   const [books, setBooks] = useState([]);
   const { codigo } = useParams();
 
@@ -29,8 +32,7 @@ export function BooksPage(){
     
   }, []);
  
-
-
+ 
 
   return(
     <>
@@ -38,8 +40,7 @@ export function BooksPage(){
       <h1>AboutPage: {codigo}</h1>
 
       {books?.slice(0, 3).map((p, index) => {
-        return <Card key={index} product={p} 
-          onClick={() => console.log(index.codigo)} />
+        return <Card key={index} product={p} />
         
       })        
     } 
