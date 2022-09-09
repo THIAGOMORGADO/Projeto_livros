@@ -14,19 +14,12 @@ export function HomePage() {
   }
 
   return(
-
     <div className="home-container">
        <NavBar />
-     
-     
       <main>
         <h2>AQUI é A HOME!</h2>
         <p onClick={handleBooksPage}>VAI PARA BOOKS PAGE</p>
       </main>
-
-    </div>
-
-
-   
+    </div>   
   );
 }
