@@ -29,3 +29,12 @@ header {
   margin-left: 5px;
   font-weight: 700;
 } 
+
+.btn-home-books{
+  cursor: pointer;
+}
+.btn-home-books:hover{
+  color:#f00;
+  font-weight: bold;
+  cursor: pointer;
+}

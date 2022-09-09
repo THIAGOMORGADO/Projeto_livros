@@ -1,10 +1,8 @@
 :root {
-  --clr-primary: #651fff;
+  --clr-primary: rgb(41, 95, 103);
   --clr-gray: #37474f;
   --clr-gray-light: #b0bec5;
 }
-
-
 
 .card-container {
   width: 30%;
@@ -28,8 +26,6 @@
   margin-bottom: 1rem;
   margin-left: 1rem;
   height: 375px;
-  
-  
 }
 
 .banner-img {

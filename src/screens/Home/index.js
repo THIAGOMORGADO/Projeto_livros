@@ -1,10 +1,9 @@
 import React from 'react';
-import './styles.css';
 import { useNavigate } from 'react-router-dom';
 
 import { NavBar } from '../../components/Navbar';
 
-// import { Container } from './styles';
+import './styles.css';
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -15,11 +14,11 @@ export function HomePage() {
 
   return(
     <div className="home-container">
-       <NavBar />
-      <main>
-        <h2>AQUI é A HOME!</h2>
-        <p onClick={handleBooksPage}>VAI PARA BOOKS PAGE</p>
-      </main>
+        <NavBar />
+        <main>
+          <h2>AQUI é A HOME!</h2>
+          <p onClick={handleBooksPage} className="btn-home-books">VER TODOS OS LIVROS</p>
+        </main>
     </div>   
   );
 }
