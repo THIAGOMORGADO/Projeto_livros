@@ -24,8 +24,9 @@ export  function NavBar() {
   
   return (
     <div className='navbar'>
-      <img src={logo} alt="logotipo renato gonda" />
+      <img src={logo} alt="logotipo renato gonda"/>
       <span className='logo'>Estante de livros</span>
+
       <div className={`nav-item ${isOpen && "open"}`} >
         <p onClick={handleHome}>Home</p>
         <p onClick={handleBooks}>Livros</p>
