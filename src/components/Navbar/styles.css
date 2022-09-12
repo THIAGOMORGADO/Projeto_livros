@@ -5,6 +5,7 @@
   align-items: center;
   background-color: #999;
   position: static;
+  overflow-y: none;
 }
 .navbar >.logo {
   font-weight: 700;
