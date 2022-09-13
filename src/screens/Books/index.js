@@ -28,13 +28,10 @@ export function BooksPage() {
       <h1>TODOS OS LIVROS!</h1>
 
 
-      {
-
-        loading ? <h2>Aguardando...</h2> :
-          books?.slice(0, 3).map((book, index) => {
-            return <Card key={index} product={book} />
-          })
-      }
+      {loading ? <h2>Aguardando...</h2> :
+        books?.slice(0, 3).map((book, index) => {
+          return <Card key={index} product={book} />
+        })}
     </>
   );
 }
