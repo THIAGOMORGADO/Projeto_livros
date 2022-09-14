@@ -1,63 +1,27 @@
 import React from 'react'
-import { Container, Row, Col} from 'react-bootstrap/'
-
-import './styles.css'
-
 import { useNavigate } from 'react-router-dom'
 
-import logo from '../../assets/Logo.jpeg';
+import './styles.css'
 
 export function Card(props) {
   const navigate = useNavigate();
   
   const {title, codigo, historico, preco_venda, capa_img} = props.product
 
-  function handleGoToBookWithCodigo() {
+  function handleGoToBookWithCodigo(codigo) {
     navigate(`/book`, {
       state: { select: codigo}
     })
   }
 
   return (
-   <Container>
-    
-      <Row>
-        <Col className="col-lg-4">
-          <div className="content">
-            <div className="book">
-              <p>{title}</p>
-              <img src={capa_img} width={200} height={200}/>
-              <p>{historico}</p>
-              <p>R$ {preco_venda}</p>
-              <button className="btn btn-success">Saiba</button>
-            </div>
-          </div>
-        </Col>
-        <Col className="col-lg-4">
-          <div className="content">
-            <div className="book">
-              <p>{title}</p>
-              <img src={capa_img} width={200} height={200}/>
-              <p>{historico}</p>
-              <p>R$ {preco_venda}</p>
-              <button className="btn btn-success">Saiba</button>
-            </div>
-          </div>
-        </Col>
-        <Col className="col-lg-4">
-          <div className="content">
-            <div className="book">
-              <p>{title}</p>
-              <img src={capa_img} width={200} height={200}/>
-              <p>{historico}</p>
-              <p>R$ {preco_venda}</p>
-              <button className="btn btn-success">Saiba</button>
-            </div>
-          </div>
-        </Col>
-      </Row>
-      
-   </Container>
+    <div className="book">
+      <p>{title}</p>
+      <img src={capa_img} width={200} height={200} alt={title}/>
+      <p>{historico}</p>
+      <p>R$ {preco_venda}</p>
+      <button className="btn btn-success" onClick={() => handleGoToBookWithCodigo(codigo)}>+ Detalhes</button>
+    </div>
   )
+  
 }
-

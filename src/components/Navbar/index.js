@@ -3,10 +3,7 @@ import {useNavigate} from 'react-router-dom';
 
 import { Container, Nav, Navbar } from 'react-bootstrap/';
 
-
 import logo  from '../../assets/Logo.png';
-
-
 
 export  function NavBar() {
   const navigate = useNavigate();
@@ -30,7 +27,7 @@ export  function NavBar() {
     
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand href="#home">
+          <Navbar.Brand onClick={handleHome}>
             Renato Gonda
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

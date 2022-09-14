@@ -6,10 +6,12 @@ import api from '../../services/api';
 import { NavBar } from '../../components/Navbar';
 import { Card } from '../../components/Card';
 
+import './style.css'
+
 export function BooksPage() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [visible, setVisible] = useState(1)
+  const [visible, setVisible] = useState(3)
 
   useEffect(() => {
     let isSubscribed = true
@@ -34,48 +36,36 @@ export function BooksPage() {
   }
 
   return (
+
     <>
+
       <NavBar /> 
-        <Container fluid>
-           
-          <Container>
-            <Row>
-              <Col>
-                <h1>TODOS OS LIVROS!</h1>
-              </Col>
-            </Row>
+          
+        <Container>
+          <Row>
+            <Col>
+              <h1>Nossa Vitrine de Livros</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <button onClick={handleVisibleMenos}> - LIVROS...</button>
+              <button onClick={handleVisible}> + LIVROS...</button>
+            </Col>
+          </Row>
 
-            <Row>
-              <Col>
-               
-              </Col>
-            </Row>
+          <Row>
+            <Col className="contentBooks">
+              {loading ? <h2>Carregando...</h2> :
+              books?.slice(0, visible).map((book, index) => {
+                return <Card key={index} product={book}/>
+              })}
+            </Col>
+          </Row>
 
-          </Container>
-
-          <Container>
-            <Row >
-              <Col>
-                {loading ? <h2>Carregando...</h2> :
-                books?.slice(0, visible).map((book, index) => {
-                  return <Card key={index} product={book}/>
-                })}
-              </Col>
-            </Row>
-          </Container>
-
-          <Container>
-            <Row>
-              <Col>
-                <button onClick={handleVisibleMenos}> - LIVROS...</button>
-                <button onClick={handleVisible}> + LIVROS...</button>
-              </Col>
-            </Row>
-          </Container>
-
-      </Container>
+        </Container>
     
     </>
-      
+          
   );
 }

@@ -1,9 +1,9 @@
- .linhe {
+.linhe {
   display: inline-block;
-  
 }
-.book {
- 
+
+.book { 
+  width: 300px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
