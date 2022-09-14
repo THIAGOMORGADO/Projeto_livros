@@ -7,6 +7,7 @@ import { Card } from '../../components/Card';
 export function BooksPage() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [visible, setVisible] = useState(3)
 
   useEffect(() => {
     let isSubscribed = true
@@ -22,16 +23,21 @@ export function BooksPage() {
     // eslint-disable-next-line
   }, []);
 
+  function HandleVisible(){
+    setVisible(prevstate => prevstate + 3)
+  }
+
   return (
     <>
       <NavBar />
       <h1>TODOS OS LIVROS!</h1>
 
-
-      {loading ? <h2>Aguardando...</h2> :
-        books?.slice(0, 3).map((book, index) => {
-          return <Card key={index} product={book} />
-        })}
+      <button onClick={() =>{HandleVisible}}>VER MAIS LIVROS...</button>
+    
+      {loading ? <h2>Carregando...</h2> :
+        books?.slice(0, visible).map((book, index) => {
+          return <Card key={index} product={book}/>
+      })}
     </>
   );
 }
