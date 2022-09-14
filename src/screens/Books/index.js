@@ -34,14 +34,10 @@ export function BooksPage() {
   }
 
   return (
-      <Container fluid>
-
-          <Container>
-            <Row>
-              <NavBar />
-            </Row>
-          </Container>
-
+    <>
+      <NavBar /> 
+        <Container fluid>
+           
           <Container>
             <Row>
               <Col>
@@ -51,8 +47,7 @@ export function BooksPage() {
 
             <Row>
               <Col>
-                <button onClick={handleVisibleMenos}> - LIVROS...</button>
-                <button onClick={handleVisible}> + LIVROS...</button>
+               
               </Col>
             </Row>
 
@@ -72,11 +67,15 @@ export function BooksPage() {
           <Container>
             <Row>
               <Col>
-                <p>Footer!</p>
+                <button onClick={handleVisibleMenos}> - LIVROS...</button>
+                <button onClick={handleVisible}> + LIVROS...</button>
               </Col>
             </Row>
           </Container>
 
       </Container>
+    
+    </>
+      
   );
 }

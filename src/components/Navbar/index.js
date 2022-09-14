@@ -1,13 +1,16 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom';
 
+import { Container, Nav, Navbar } from 'react-bootstrap/';
+
+
 import logo  from '../../assets/Logo.png';
 
-import './styles.css'
+
 
 export  function NavBar() {
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false)
+  
 
   const handleHome = () => {
     navigate('/')
@@ -23,22 +26,24 @@ export  function NavBar() {
   }
   
   return (
-    <div className='navbar'>
-      <img src={logo} alt="logotipo renato gonda"/>
-      <span className='logo'>Estante de livros</span>
-
-      <div className={`nav-item ${isOpen && "open"}`} >
-        <p onClick={handleHome}>Home</p>
-        <p onClick={handleBooks}>Livros</p>
-        <p onClick={handleAbout}>Quem somos</p>
-        <p onClick={handleContacts}>Contato</p>
-        
-      </div>
-      <div 
-        className={`nav-toggle ${isOpen && "open"}`} 
-        onClick={() => setIsOpen(!isOpen)}>
-        <div className="bar"></div>
-      </div>
-    </div>
+    <>
+    
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+        <Navbar.Brand href="#home">
+            Renato Gonda
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link onClick={handleHome}>Home</Nav.Link>
+              <Nav.Link onClick={handleBooks}>Livros</Nav.Link>
+              <Nav.Link onClick={handleAbout}>Sobre</Nav.Link>
+              <Nav.Link onClick={handleContacts}>Contato</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    </>
   )
 }

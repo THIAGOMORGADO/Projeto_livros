@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavBar } from '../../components/Navbar';
 
-import './styles.css';
-
 import Logo from '../../assets/Logo.jpeg'
 import Autor from '../../assets/Autor.PNG'
 
