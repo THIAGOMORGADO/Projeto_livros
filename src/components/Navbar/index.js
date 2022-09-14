@@ -1,12 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {useNavigate} from 'react-router-dom';
 
+import './styles.css'
+
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap/';
 
 
-import { Container, Nav, Navbar } from 'react-bootstrap/';
-
-
-import logo  from '../../assets/Logo.png';
 
 
 
@@ -31,22 +30,26 @@ export  function NavBar() {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
         <Container >
-        <Navbar.Brand href="#home">
-            Renato Gonda
-          </Navbar.Brand>
-
-
-          <Nav className="justify-content-end">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="justify-content-end bar">
-                  <Nav.Link onClick={handleHome}>Home</Nav.Link>
-                  <Nav.Link onClick={handleBooks}>Livros</Nav.Link>
-                  <Nav.Link onClick={handleAbout}>Sobre</Nav.Link>
-                  <Nav.Link onClick={handleContacts}>Contato</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Nav>
+        <Navbar.Brand href="#home">Renato Gonda</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
+          <Navbar.Collapse  id="responsive-navbar-nav" >
+            <Nav className="me-auto nav_bar_items" >
+              <Nav.Link onClick={handleHome} className="navItem">Home</Nav.Link>
+              <Nav.Link onClick={handleBooks} className="navItem">Livros</Nav.Link>
+              <Nav.Link onClick={handleAbout} className="navItem">Sobre</Nav.Link>
+              <Nav.Link onClick={handleContacts} className="navItem">Contato</Nav.Link>
+              <br/>
+              <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Busacar"
+              className="me-2"
+              aria-label="Buscar..."
+            />
+            <Button variant="outline-success">Buscar</Button>
+          </Form>
+            </Nav>
+          </Navbar.Collapse>
       </Container>
     </Navbar>
     </>

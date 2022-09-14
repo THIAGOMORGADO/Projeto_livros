@@ -1,0 +1,16 @@
+@media (min-width: 900px) {
+  .nav_bar_items {
+    width: 100%;
+    display: flex !important;
+    justify-content: flex-end !important;
+    flex-direction: row !important;
+  }
+
+}
+@media(max-width: 730px) {
+  .navItem {
+    border-bottom: 1px solid #999;
+    margin-bottom: 0.5rem;
+    width: 70px;
+  }
+}
