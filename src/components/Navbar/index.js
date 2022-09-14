@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 
 import './styles.css'
 
-import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap/';
+import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap/';
 
 
 
@@ -40,14 +40,17 @@ export  function NavBar() {
               <Nav.Link onClick={handleContacts} className="navItem">Contato</Nav.Link>
               <br/>
               <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Busacar"
-              className="me-2"
-              aria-label="Buscar..."
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
+                <Form.Control
+                  type="search"
+                  placeholder="Busacar"
+                  className="me-2"
+                  aria-label="Buscar..."
+                />
+                <Button variant="outline-success">Buscar</Button>
+              </Form>
+              <NavDropdown className="bg-drop" title="Sign In" id="navbarScrollingDropdown" >
+                <NavDropdown.Item href="#action3" bg="dark">Sign In</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
       </Container>
