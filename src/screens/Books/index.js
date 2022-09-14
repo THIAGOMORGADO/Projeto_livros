@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Row, Col }from 'react-bootstrap';
 
+import './styles.css';
+
 import api from '../../services/api';
 
 import { NavBar } from '../../components/Navbar';
