@@ -54,7 +54,7 @@ export function BooksPage() {
           </Container>
 
           <Container>
-            <Row>
+            <Row >
               <Col>
                 {loading ? <h2>Carregando...</h2> :
                 books?.slice(0, visible).map((book, index) => {

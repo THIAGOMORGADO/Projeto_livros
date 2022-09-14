@@ -1,5 +1,11 @@
 import React from 'react'
+import { Container, Row, Col} from 'react-bootstrap/'
+
+import './styles.css'
+
 import { useNavigate } from 'react-router-dom'
+
+import logo from '../../assets/Logo.jpeg';
 
 export function Card(props) {
   const navigate = useNavigate();
@@ -13,18 +19,45 @@ export function Card(props) {
   }
 
   return (
-    <main className="card-container" >
-      <div className="wrapper-flex">
-        <div className="card-area">
-          <div className="container">
-            <div className='banner-img'></div>
-            <img src={capa_img} alt={title} className="profile-img"/>
-            <p className="name">{title}</p>
-            <p className="description">{historico}</p>
-            <button className='btn' onClick={handleGoToBookWithCodigo}>R$ {preco_venda}</button>
+   <Container>
+    
+      <Row>
+        <Col className="col-lg-4">
+          <div className="content">
+            <div className="book">
+              <p>{title}</p>
+              <img src={capa_img} width={200} height={200}/>
+              <p>{historico}</p>
+              <p>R$ {preco_venda}</p>
+              <button className="btn btn-success">Saiba</button>
+            </div>
           </div>
-        </div>
-      </div>  
-    </main>
+        </Col>
+        <Col className="col-lg-4">
+          <div className="content">
+            <div className="book">
+              <p>{title}</p>
+              <img src={capa_img} width={200} height={200}/>
+              <p>{historico}</p>
+              <p>R$ {preco_venda}</p>
+              <button className="btn btn-success">Saiba</button>
+            </div>
+          </div>
+        </Col>
+        <Col className="col-lg-4">
+          <div className="content">
+            <div className="book">
+              <p>{title}</p>
+              <img src={capa_img} width={200} height={200}/>
+              <p>{historico}</p>
+              <p>R$ {preco_venda}</p>
+              <button className="btn btn-success">Saiba</button>
+            </div>
+          </div>
+        </Col>
+      </Row>
+      
+   </Container>
   )
 }
+
