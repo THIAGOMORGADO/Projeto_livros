@@ -23,7 +23,7 @@ export function BooksPage() {
     // eslint-disable-next-line
   }, []);
 
-  function HandleVisible(){
+  function handleVisible(){
     setVisible(prevstate => prevstate + 3)
   }
 
@@ -32,7 +32,7 @@ export function BooksPage() {
       <NavBar />
       <h1>TODOS OS LIVROS!</h1>
 
-      <button onClick={() =>{HandleVisible}}>VER MAIS LIVROS...</button>
+      <button onClick={() => handleVisible}>VER MAIS LIVROS...</button>
     
       {loading ? <h2>Carregando...</h2> :
         books?.slice(0, visible).map((book, index) => {
