@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import './styles.css'
+
 
 export function Card(props) {
   const navigate = useNavigate();
@@ -23,5 +23,4 @@ export function Card(props) {
       <button className="btn btn-success" onClick={() => handleGoToBookWithCodigo(codigo)}>+ Detalhes</button>
     </div>
   )
-  
 }
