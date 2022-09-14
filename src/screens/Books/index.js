@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Container, Row, Col }from 'react-bootstrap';
+
 import api from '../../services/api';
 
 import { NavBar } from '../../components/Navbar';
@@ -7,7 +9,7 @@ import { Card } from '../../components/Card';
 export function BooksPage() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [visible, setVisible] = useState(3)
+  const [visible, setVisible] = useState(1)
 
   useEffect(() => {
     let isSubscribed = true
@@ -24,20 +26,57 @@ export function BooksPage() {
   }, []);
 
   function handleVisible(){
-    setVisible(prevstate => prevstate + 3)
+    setVisible((prevValue) => prevValue + 1);
+  }
+
+  function handleVisibleMenos(){
+    setVisible((prevValue) => prevValue - 1);
   }
 
   return (
-    <>
-      <NavBar />
-      <h1>TODOS OS LIVROS!</h1>
+      <Container fluid>
 
-      <button onClick={() => handleVisible}>VER MAIS LIVROS...</button>
-    
-      {loading ? <h2>Carregando...</h2> :
-        books?.slice(0, visible).map((book, index) => {
-          return <Card key={index} product={book}/>
-      })}
-    </>
+          <Container>
+            <Row>
+              <NavBar />
+            </Row>
+          </Container>
+
+          <Container>
+            <Row>
+              <Col>
+                <h1>TODOS OS LIVROS!</h1>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <button onClick={handleVisibleMenos}> - LIVROS...</button>
+                <button onClick={handleVisible}> + LIVROS...</button>
+              </Col>
+            </Row>
+
+          </Container>
+
+          <Container>
+            <Row>
+              <Col>
+                {loading ? <h2>Carregando...</h2> :
+                books?.slice(0, visible).map((book, index) => {
+                  return <Card key={index} product={book}/>
+                })}
+              </Col>
+            </Row>
+          </Container>
+
+          <Container>
+            <Row>
+              <Col>
+                <p>Footer!</p>
+              </Col>
+            </Row>
+          </Container>
+
+      </Container>
   );
 }
