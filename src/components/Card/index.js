@@ -20,7 +20,8 @@ export function Card(props) {
 
   return (
    <Container>
-    
+     
+
       <Row>
         <Col className="col-lg-4">
           <div className="content">
@@ -29,7 +30,7 @@ export function Card(props) {
               <img src={capa_img} width={200} height={200}/>
               <p>{historico}</p>
               <p>R$ {preco_venda}</p>
-              <button className="btn btn-success">Saiba</button>
+              <button className="btn btn-success" onClick={handleGoToBookWithCodigo}>Saiba</button>
             </div>
           </div>
         </Col>
@@ -40,7 +41,7 @@ export function Card(props) {
               <img src={capa_img} width={200} height={200}/>
               <p>{historico}</p>
               <p>R$ {preco_venda}</p>
-              <button className="btn btn-success">Saiba</button>
+              <button className="btn btn-success" onClick={handleGoToBookWithCodigo}>Saiba</button>
             </div>
           </div>
         </Col>
@@ -51,7 +52,7 @@ export function Card(props) {
               <img src={capa_img} width={200} height={200}/>
               <p>{historico}</p>
               <p>R$ {preco_venda}</p>
-              <button className="btn btn-success">Saiba</button>
+              <button className="btn btn-success" onClick={handleGoToBookWithCodigo}>Saiba</button>
             </div>
           </div>
         </Col>

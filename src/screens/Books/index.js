@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Row, Col }from 'react-bootstrap';
 
+import './styles.css';
+
 import api from '../../services/api';
 
 import { NavBar } from '../../components/Navbar';
@@ -67,8 +69,10 @@ export function BooksPage() {
           <Container>
             <Row>
               <Col>
-                <button onClick={handleVisibleMenos}> - LIVROS...</button>
-                <button onClick={handleVisible}> + LIVROS...</button>
+                <div className="footer">
+                  <button onClick={handleVisibleMenos} className="btn btn-danger"> - LIVROS...</button>
+                  <button onClick={handleVisible} className="btn btn-primary"> + LIVROS...</button>
+                </div>
               </Col>
             </Row>
           </Container>
