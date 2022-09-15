@@ -31,11 +31,20 @@
 .books-maps {
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex;
   justify-content: center;
 }
 .map {
   width: 100%;
   display: flex;
   text-align: justify;
+
+}
+@media only screen and (max-width: 600px) {
+  .map {
+    width: 100%;
+    display: block;
+    text-align: justify;
+  
+  }
 }
