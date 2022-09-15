@@ -1,10 +1,41 @@
-.footer {
+.books-container {
+  width: 100%;
+  height: 100vh;
+}
+.books-content {
+    width: 100%;
+    margin: 0 auto;
+}
+.header h1 {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+.section-butttons {
+  
+  max-width: 1110px;
+  margin: 0 auto;
+
+  margin-top: 30px;
+}
+.section-butttons button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.main {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  
 }
-.footer button {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.books-maps {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map {
+  width: 100%;
+  display: flex;
+  text-align: justify;
 }

@@ -3,12 +3,8 @@ import {useNavigate} from 'react-router-dom';
 
 import './styles.css'
 
-import { Button, Container, Form, Nav, Navbar, NavDropdown, Row, Col } from 'react-bootstrap/';
+import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap/';
 import  * as Icons from 'react-bootstrap-icons';
-
-
-
-
 
 export  function NavBar() {
   const navigate = useNavigate();
@@ -43,9 +39,7 @@ export  function NavBar() {
             />
               <Button variant="outline-success">Buscar</Button>
             </Form>
-       
-        
-
+  
           <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
           <Navbar.Collapse  id="responsive-navbar-nav" >
             <Nav className="me-auto nav_bar_items" >
@@ -54,7 +48,6 @@ export  function NavBar() {
               <Nav.Link onClick={handleAbout} className="navItem">Sobre</Nav.Link>
               <Nav.Link onClick={handleContacts} className="navItem">Contato</Nav.Link>
               <br/>
-             
               <NavDropdown className="bg-drop" title="Sign In" id="navbarScrollingDropdown" >
                   <NavDropdown.Item href="/login" bg="dark" className="Items">
                     <Icons.PersonCircle className="icons" />Sign In

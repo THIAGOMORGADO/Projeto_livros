@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row, Col }from 'react-bootstrap';
 
 import './styles.css';
 
@@ -8,12 +7,12 @@ import api from '../../services/api';
 import { NavBar } from '../../components/Navbar';
 import { Card } from '../../components/Card';
 
-import './style.css'
 
 export function BooksPage() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [visible, setVisible] = useState(3)
+  const [visible, setVisible] = useState(3);
+  
 
   useEffect(() => {
     let isSubscribed = true
@@ -40,33 +39,29 @@ export function BooksPage() {
   return (
 
     <>
-
-      <NavBar /> 
-          
-        <Container>
-          <Row>
-            <Col>
-              <h1>Nossa Vitrine de Livros</h1>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
+    <NavBar /> 
+      <div className="books-container">
+        <div className="books-content">
+          <div className="header">
+            <h1>Nossa Vitrine de Livros</h1>
+          </div>
+          <div className="section-butttons">
               <button onClick={handleVisibleMenos}> - LIVROS...</button>
               <button onClick={handleVisible}> + LIVROS...</button>
-            </Col>
-          </Row>
+          </div>
 
-          <Row>
-            <Col className="contentBooks">
-              {loading ? <h2>Carregando...</h2> :
+          <div className="main">
+           <div className="books-maps">
+            <div className="map">
+            {loading ? <h2>Carregando...</h2> :
               books?.slice(0, visible).map((book, index) => {
-                return <Card key={index} product={book}/>
-              })}
-            </Col>
-          </Row>
-
-        </Container>
-    
+                return <Card key={index} product={book} className="card-books"/>
+            })}
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
     </>
           
   );

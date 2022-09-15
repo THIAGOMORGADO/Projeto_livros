@@ -1,0 +1,5 @@
+.contentBooks{
+  max-width: 100%;
+  display: flex !important;
+  margin-top: 30px !important;
+}
