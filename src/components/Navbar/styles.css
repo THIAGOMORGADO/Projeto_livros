@@ -12,18 +12,12 @@
   
 }
 .dropdowm-Link {
-  
+  color: #000;
   width: 5rem;
  
   
 }
-.icons {
-  
- 
-  width: 20px;
-  height: 20px;
-  margin: 0 auto;
-}
+
 @media (min-width: 900px) {
   .nav_bar_items {
     width: 90%;
