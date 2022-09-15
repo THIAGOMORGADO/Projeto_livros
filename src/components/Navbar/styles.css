@@ -1,9 +1,32 @@
 .bg-drop {
   margin-left: 5px;
+  
+}
+.d-flex {
+  display: flex;
+}
+.d-flex .Input{
+  width: 13rem;
+  
+  background-color: #333
+  
+}
+.dropdowm-Link {
+  
+  width: 5rem;
+ 
+  
+}
+.icons {
+  
+ 
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
 }
 @media (min-width: 900px) {
   .nav_bar_items {
-    width: 100%;
+    width: 90%;
     display: flex !important;
     justify-content: flex-end !important;
     flex-direction: row !important;
