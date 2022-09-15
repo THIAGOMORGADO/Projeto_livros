@@ -56,11 +56,9 @@ export  function NavBar() {
               <br/>
              
               <NavDropdown className="bg-drop" title="Sign In" id="navbarScrollingDropdown" >
-                <div>
-                  <NavDropdown.Item href="/login" bg="dark">
+                  <NavDropdown.Item href="/login" bg="dark" className="Items">
                     <Icons.PersonCircle className="icons" />Sign In
                   </NavDropdown.Item>
-                </div>
               </NavDropdown>
             </Nav>
 
