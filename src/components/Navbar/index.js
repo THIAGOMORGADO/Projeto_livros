@@ -30,16 +30,20 @@ export  function NavBar() {
         <Navbar.Brand href="#home">
           Renato Gonda
         </Navbar.Brand>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Busacar"
-              className="me-2 Input"
-              aria-label="Buscar..."
-            />
-              <Button variant="outline-success">Buscar</Button>
-            </Form>
-  
+            <div id="search">
+              <Form className="d-flex">
+                
+                <Form.Control
+                  type="search"
+                  placeholder="Busacar"
+                  className="me-2 Input"
+                  aria-label="Buscar..."
+                />
+                <Button variant="outline-success">
+                    <Icons.Search />
+                </Button>
+                </Form>
+            </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
           <Navbar.Collapse  id="responsive-navbar-nav" >
             <Nav className="me-auto nav_bar_items" >
@@ -49,9 +53,21 @@ export  function NavBar() {
               <Nav.Link onClick={handleContacts} className="navItem">Contato</Nav.Link>
               <br/>
               <NavDropdown className="bg-drop" title="Sign In" id="navbarScrollingDropdown" >
-                  <NavDropdown.Item href="/login" bg="dark" className="Items">
-                    <Icons.PersonCircle className="icons" />Sign In
+                <div className="btn_Sign">
+                  <NavDropdown.Item 
+                      href="/login" 
+                      bg="dark" 
+                      className="Items"
+                    >
+                    <div className="icon_area">
+                      <Icons.PersonCircle className="icons" 
+                      />&nbsp;&nbsp;
+                      <span>Sign In.... </span>
+                    </div>  
+                      
                   </NavDropdown.Item>
+                </div>
+                  
               </NavDropdown>
             </Nav>
 

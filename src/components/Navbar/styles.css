@@ -1,14 +1,21 @@
 .bg-drop {
   margin-left: 5px;
-  
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: red;
 }
 .d-flex {
   display: flex;
+  align-items: center;
+  
 }
 .d-flex .Input{
   width: 13rem;
   background-color: #333
 }
+
 
 @media (min-width: 900px) {
   .nav_bar_items {

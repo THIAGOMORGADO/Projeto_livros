@@ -32,7 +32,7 @@ export function Card(props) {
           <img src={capa_img} alt="" srcset="" />
         </div>
         <div className="card-description">
-            <textarea value={historico} rows="10" cols="10" maxLength="30" />
+            <textarea value={historico} rows="5" cols="5" maxLength="20" />
         </div>
         <div className="card-button">
           <button className="card-button" onClick={handleGoToBookWithCodigo}>Saiba-mais</button>
