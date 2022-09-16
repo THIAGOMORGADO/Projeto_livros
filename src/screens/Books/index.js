@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
+
 import './styles.css';
 
 import api from '../../services/api';
+
+import { Button } from 'react-bootstrap';
 
 import { NavBar } from '../../components/Navbar';
 import { Card } from '../../components/Card';
@@ -46,8 +49,11 @@ export function BooksPage() {
             <h1>Nossa Vitrine de Livros</h1>
           </div>
           <div className="section-butttons">
-              <button onClick={handleVisibleMenos}> - LIVROS...</button>
-              <button onClick={handleVisible}> + LIVROS...</button>
+              <Button 
+              onClick={handleVisibleMenos}
+              variant="danger"
+              > - LIVROS...</Button>
+              <Button onClick={handleVisible} variant="success"> + LIVROS...</Button>
           </div>
 
           <div className="main">

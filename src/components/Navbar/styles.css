@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: red;
 }
 .d-flex {
   display: flex;
@@ -17,12 +16,16 @@
 }
 
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .nav_bar_items {
     width: 90%;
     display: flex !important;
     justify-content: flex-end !important;
     flex-direction: row !important;
+  }
+  .d-flex {
+    width: 50px;
+    background-color: red;
   }
 
 }
@@ -32,4 +35,21 @@
     margin-bottom: 0.5rem;
     width: 70px;
   }
+}
+@media(max-width: 428px) {
+  .d-flex .Input {
+    width: 9rem;
+  } 
+}
+@media(max-width: 320px) {
+  .d-flex .Input {
+    display: flex;
+    
+    width: 5rem;
+  }
+  #brand {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+  } 
 }

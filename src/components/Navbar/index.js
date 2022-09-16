@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import {useNavigate} from 'react-router-dom';
 
 import './styles.css'
@@ -27,7 +27,7 @@ export  function NavBar() {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
         <Container >
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" id="brand">
           Renato Gonda
         </Navbar.Brand>
             <div id="search">
